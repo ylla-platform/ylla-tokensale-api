@@ -1,6 +1,6 @@
-# fullstack-api
+# ylla-tokensale-api
 
-Fullstack API starter kit with Koa, rethinkdb and websockets.
+Backend API for tokensale web site.
 
 ## install
 	
