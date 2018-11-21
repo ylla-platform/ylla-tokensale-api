@@ -14,11 +14,11 @@ class Subscribers extends Controller {
 
     try {
       await ctx.db.query(
-        'INSERT INTO subscribers(email, subscribed, updatedAt) values($1, $2, $3)',
+        'INSERT INTO subscribers(email, subscribed, updated_at) values($1, $2, $3)',
         [
           data.email,
           true,
-          data.updatedAt,
+          data.updated_at,
         ]
       );
     } catch (err) {
