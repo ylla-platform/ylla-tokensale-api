@@ -3,21 +3,22 @@ const Controller = require('./controller');
 class Subscribers extends Controller {
   constructor() {
     super();
-    this.collection = 'subscribers';
+    this.table = 'subscribers';
   }
 
   async post(ctx) {
     const data = ctx.request.body;
 
-    data.updatedAt = new Date().toISOString();
-    data.createdAt = new Date().toISOString();
+    data.updated_at = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    data.created_at = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
     try {
       await ctx.db.query(
-        'INSERT INTO subscribers(email, subscribed) values($1, $2)',
+        'INSERT INTO subscribers(email, subscribed, updatedAt) values($1, $2, $3)',
         [
           data.email,
-          true
+          true,
+          data.updatedAt,
         ]
       );
     } catch (err) {
