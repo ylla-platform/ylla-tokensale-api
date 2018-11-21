@@ -19,6 +19,7 @@
     "lodash": "^4.17.11",
     "minimist": "^1.2.0",
     "mongodb": "^2.x",
+    "pg": "^7.6.1",
     "pm2": "^2.10.3",
     "redis": "^2.8.0",
     "rethinkdb": "^2.3.3"
@@ -37,7 +38,7 @@
   },
   "scripts": {
     "test": "NODE_ENV=test mocha './test/**/*-spec.js'",
-    "start": ". ./.env.sh && ./node_modules/.bin/nodemon index.js",
+    "start": ". ./.env.sh && NODE_ENV=development ./node_modules/.bin/nodemon index.js",
     "start:cluster": "./node_modules/.bin/nodemon cluster.js",
     "start:production": "NODE_ENV=production && . ./.env.sh && ./node_modules/.bin/pm2 start index.js -i max --watch --name='fullstack-api'",
     "restart:production": "NODE_ENV=production && . ./.env.sh && ./node_modules/.bin/pm2 restart fullstack-api --update-env",

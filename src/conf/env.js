@@ -1,5 +1,14 @@
 module.exports = {
-  production: {},
+  production: {
+    postgres: {
+      host: process.env.YLLA_TOKENSALE_PRODUCTION_PG_HOST,
+      database: process.env.YLLA_TOKENSALE_PRODUCTION_PG_DB,
+      port: 5432,
+      user: process.env.YLLA_TOKENSALE_PRODUCTION_PG_USER,
+      password: process.env.YLLA_TOKENSALE_PRODUCTION_PG_PASS,
+      ssl: true
+    }
+  },
 
   development: {
     mongodb: {
@@ -12,6 +21,14 @@ module.exports = {
     },
     redis: {
       url: process.env.FULLSTACK_REDIS_URL
+    },
+    postgres: {
+      host: process.env.YLLA_TOKENSALE_DEVELOPMENT_PG_HOST,
+      database: process.env.YLLA_TOKENSALE_DEVELOPMENT_PG_DB,
+      port: 5432,
+      user: process.env.YLLA_TOKENSALE_DEVELOPMENT_PG_USER,
+      password: process.env.YLLA_TOKENSALE_DEVELOPMENT_PG_PASS,
+      ssl: true
     }
   },
 
