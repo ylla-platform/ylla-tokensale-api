@@ -36,7 +36,8 @@ routes(app);
 //   ctx.body = 'Hello World'
 // });
 
-app.listen(3000, () => console.warn(`server started http://localhost:3000 ${process.pid} pid`));
+const port = process.env.YLLA_PORT;
+app.listen(port, () => console.warn(`server started http://localhost:${port} ${process.pid} pid`));
 
 module.exports = app;
 
