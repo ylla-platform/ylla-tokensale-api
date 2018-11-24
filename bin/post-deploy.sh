@@ -8,7 +8,7 @@ host=$(hostname)
 name=ylla
 project=ylla-tokensale-api
 
-. $HOME/www/${name}/${project}/.env.sh
+. $HOME/www/${name}/${project}/.env
 
 production=$YLLA_PRODUCTION_HOST
 development=$YLLA_DEVELOPMENT_HOST
