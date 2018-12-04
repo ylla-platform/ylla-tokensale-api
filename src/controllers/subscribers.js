@@ -6,6 +6,25 @@ class Subscribers extends Controller {
     this.table = 'subscribers';
   }
 
+  /**
+   * @api {post} /subscribers Add an email subscriber
+   * @apiGroup Subscribers
+   * @apiDescription Add an email to the email newsletter subscriber database.
+   * @apiPermission public
+   * @apiParam (Request body) {String} email email of subscriber
+   * @apiSampleRequest /subscribers
+   * @apiExample {js} javascript
+   *     const data = {
+   *         email: 'asdf@example.com'
+   *     };
+   *
+   *     http.post('https://tokensale.yl.la/api/1/subscribers', data)
+   *      .then(res => {
+   *         const { created_at, updated_at, email } = res.data;
+   *      });
+   * @apiExample {curl} curl
+   *     curl -X POST https://tokensale.yl.la/api/1/subscribers -d "{email: 'asdf@example.com'}"
+   */
   async post(ctx) {
     const data = ctx.request.body;
 

@@ -1,0 +1,8 @@
+{
+  "name": "Ylla Tokensale API",
+  "version": "1.0.0",
+  "description": "REST API Documentation",
+  "title": "docs.tokensale.yl.la",
+  "url" : "https://tokensale.yl.la/api/1",
+  "sampleUrl": "https://tokensale.yl.la/api/1"
+}
