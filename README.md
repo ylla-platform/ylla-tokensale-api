@@ -1,5 +1,7 @@
 # ylla-tokensale-api
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ylla-platform/ylla-tokensale-api.svg)](https://greenkeeper.io/)
+
 Backend API for tokensale web site.
 
 ## install
