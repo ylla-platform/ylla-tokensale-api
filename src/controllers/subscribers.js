@@ -45,7 +45,7 @@ class Subscribers extends Controller {
       const { constraint, detail } = err;
       ctx.body = { constraint, detail };
       console.error(err);
-      ctx.db.end();
+      ctx.db.release();
       return;
     }
 
@@ -62,7 +62,7 @@ class Subscribers extends Controller {
       console.error(err);
     }
 
-    ctx.db.end();
+    ctx.db.release();
   }
 }
 
