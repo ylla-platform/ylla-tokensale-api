@@ -1,7 +1,7 @@
 const path = require('path');
 const Router = require('koa-router');
-const name = path.basename(__filename, '.js');
 
+const name = path.basename(__filename, '.js');
 /* eslint import/no-dynamic-require: 'off' */
 const Controller = require(`../controllers/${name}`);
 const controller = new Controller();

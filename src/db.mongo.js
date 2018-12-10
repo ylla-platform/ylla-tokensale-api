@@ -1,5 +1,5 @@
 const http = require('http');
-const MongoClient = require('mongodb').MongoClient;
+const { MongoClient } = require('mongodb');
 const conf = require('./conf');
 
 class Mongo {
@@ -13,9 +13,11 @@ class Mongo {
 
   async connect(ctx, next) {
     try {
+      // eslint-disable-next-line no-console
       console.log('Connecting to database: ', this.dbUrl);
       ctx.db = await MongoClient.connect(this.dbUrl);
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.warn('unable to connect: ', this.dbUrl);
       ctx.status = 500;
       ctx.body = err.message || http.STATUS_CODES[ctx.status];
@@ -31,4 +33,3 @@ class Mongo {
 }
 
 module.exports = Mongo;
-

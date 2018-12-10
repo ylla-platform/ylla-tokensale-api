@@ -5,7 +5,7 @@ class Home extends Controller {
   constructor() {
     super();
     this.version = {
-      api
+      api,
     };
   }
 
@@ -14,7 +14,7 @@ class Home extends Controller {
 
     ctx.body = {
       'ylla-tokensale-api': this.version.api,
-      env
+      env,
     };
   }
 }

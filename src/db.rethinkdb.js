@@ -15,7 +15,7 @@ class RethinkDB {
       ctx.db = await this.r.connect({
         host: conf.rethinkdb.host,
         port: conf.rethinkdb.port,
-        db: conf.rethinkdb.db
+        db: conf.rethinkdb.db,
       });
     } catch (err) {
       console.warn('unable to connect: ', `rethinkdb://${conf.rethinkdb.host}:${conf.rethinkdb.port}/${conf.rethinkdb.db}`);
