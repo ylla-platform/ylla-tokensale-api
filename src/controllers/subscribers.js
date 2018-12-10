@@ -38,12 +38,13 @@ class Subscribers extends Controller {
           data.email,
           true,
           data.updated_at,
-        ]
+        ],
       );
     } catch (err) {
       ctx.status = 500;
       const { constraint, detail } = err;
       ctx.body = { constraint, detail };
+      // eslint-disable-next-line no-console
       console.error(err);
       ctx.db.release();
       return;
@@ -53,12 +54,14 @@ class Subscribers extends Controller {
       const res = await ctx.db.query(
         'SELECT * FROM subscribers WHERE email = $1',
         [data.email],
-      )
+      );
+      // eslint-disable-next-line prefer-destructuring
       ctx.body = res.rows[0];
-    } catch(err) {
+    } catch (err) {
       ctx.status = 500;
       const { constraint, detail } = err;
       ctx.body = { constraint, detail };
+      // eslint-disable-next-line no-console
       console.error(err);
     }
 

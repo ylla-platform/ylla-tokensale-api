@@ -6,7 +6,6 @@ module.exports = {
     mocha: true
   },
   rules: {
-    'comma-dangle': ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'no-param-reassign': ['error', { 'props': false }],

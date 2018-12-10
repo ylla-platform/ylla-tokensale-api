@@ -1,6 +1,6 @@
 function validateEmail(email, messages) {
   const result = {
-    isValid: false
+    isValid: false,
   };
 
   if (email && email.length > 6 && /.@.+\..+/.test(email)) {
@@ -10,7 +10,7 @@ function validateEmail(email, messages) {
   if (!result.isValid) {
     messages.push({
       field: 'email',
-      message: 'Email is not valid'
+      message: 'Email is not valid',
     });
   }
 
@@ -26,6 +26,5 @@ function validate(data) {
 }
 
 module.exports = {
-  validate
+  validate,
 };
-

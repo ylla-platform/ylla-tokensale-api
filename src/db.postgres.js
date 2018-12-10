@@ -1,5 +1,5 @@
 const http = require('http');
-const { Pool } = require('pg')
+const { Pool } = require('pg');
 const conf = require('./conf');
 
 class Postgres {

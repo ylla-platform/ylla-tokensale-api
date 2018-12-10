@@ -7,4 +7,3 @@ module.exports = app => {
     ctx.set('X-Response-Time', `${ms}ms`);
   });
 };
-

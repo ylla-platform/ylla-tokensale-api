@@ -1,7 +1,7 @@
 const http = require('http');
 const redis = require('redis');
-const conf = require('./conf');
 const bluebird = require('bluebird');
+const conf = require('./conf');
 
 class Redis {
   constructor(opts) {
@@ -18,7 +18,7 @@ class Redis {
   async connect(ctx, next) {
     try {
       ctx.db = await redis.createClient({
-        url: this.dbUrl
+        url: this.dbUrl,
       });
     } catch (err) {
       console.warn('unable to connect: ', this.dbUrl);
@@ -36,4 +36,3 @@ class Redis {
 }
 
 module.exports = Redis;
-
