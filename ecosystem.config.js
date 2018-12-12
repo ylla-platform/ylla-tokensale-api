@@ -2,6 +2,7 @@ module.exports = {
   apps : [{
     name: 'ylla-tokesale-api',
     script: 'index.js',
+    args: "-i max --watch",
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
     // args: 'one two',
