@@ -37,6 +37,7 @@ routes(app);
 // });
 
 const port = process.env.YLLA_PORT;
+console.log('PORT', port);
 app.listen(port, () => console.warn(`server started http://localhost:${port} ${process.pid} pid`));
 
 module.exports = app;

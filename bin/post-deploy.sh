@@ -24,8 +24,10 @@ if [[ $host == "$production" ]] || [[ $host == "$development" ]]; then
   # pm2 restart
   . $HOME/.bashrc
 	if [[ $host == "$production" ]]; then
+  	echo "restarting production...."
   	npm run restart:production
 	elif [[ $host == "$development" ]]; then
+	  echo "restarting development...."
   	npm run restart:development
 	fi
 fi
